@@ -24,7 +24,19 @@ var work = {
     title: 'senior software enginner',
     dates: '2014-2014',
     location: 'Barcelona, Spain'
-  }]
+  }],
+  display: function() {
+    for (idx in work.jobs) {
+      $('#workExperience').append(HTMLworkStart);
+      var workEntry = work.jobs[idx];
+      var employer = HTMLworkEmployer.replace('%data%', workEntry.employer);
+      var title = HTMLworkTitle.replace('%data%', workEntry.title);
+      var dates = HTMLworkDates.replace('%data%', workEntry.dates);
+      var locationString = HTMLworkLocation.replace('%data%', workEntry.location);
+      $('.work-entry:last').append(employer + title + dates + locationString);
+
+    }
+  }
 
 };
 
@@ -103,16 +115,6 @@ if (bio.skills) {
   $('#skills').append(HTMLskills.replace('%data%', skills));
 };
 
-for (idx in work.jobs) {
-  $('#workExperience').append(HTMLworkStart);
-  var employer = HTMLworkEmployer.replace('%data%', work.jobs[idx].employer);
-  var title = HTMLworkTitle.replace('%data%', work.jobs[idx].title);
-  var dates = HTMLworkDates.replace('%data%', work.jobs[idx].dates);
-  var locations = HTMLworkLocation.replace('%data%', work.jobs[idx].location);
-  $('.work-entry:last').append(employer + title + dates + locations);
-
-};
-
 $(document).click(function(loc) {
   console.log(loc.pageX, loc.pageY);
 
@@ -123,7 +125,7 @@ $(document).click(function(loc) {
 
 
 
-
+work.display();
 projects.display();
 education.display();
 
