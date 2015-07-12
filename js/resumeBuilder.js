@@ -31,17 +31,37 @@ var work = {
 var education = {
   schools: [{
     name: 'Kharkiv Polytechnical Institute',
+    degree: 'Master degree',
+    major: 'Metrology and Measuring Technology',
     location: 'Kharkiv, Ukraine',
-    dates: 2008,
+    dates: '2002-2008',
     url: 'http://www.kpi.kharkov.ua/en/'
   }],
   onlineCourses: [{
     title: 'M101J: MongoDB for Java Developers',
     school: 'MongoDB',
-    dates: 2014,
+    dates: 'May 2014',
     url: 'http://education.mongodb.com/downloads/certificates/8a8b88ac78db482d9d64e23619280ed1/Certificate.pdf'
-  }]
-
+  }],
+  display: function() {
+    for (idx in education.schools) {
+      var educationEntry = education.schools[idx];
+      $('#education').append(HTMLschoolStart);
+      var name = HTMLschoolName.replace('%data%', educationEntry.name);
+      var dates = HTMLschoolDates.replace('%data%', educationEntry.dates);
+      var degree = HTMLprojectDescription.replace('%data%', educationEntry.degree);
+      $('.education-entry:last').append(name + degree + dates);
+    };
+    for (idx in education.onlineCourses) {
+      $('#education').append(HTMLonlineClasses);
+      $('#education').append(HTMLonlineStart);
+      var course = education.onlineCourses[idx];
+      var title = HTMLonlineTitle.replace('%data%', course.title);
+      var school = HTMLonlineSchool.replace('%data%', course.school)
+      var dates = HTMLonlineDates.replace('%data%', course.dates);
+      $('.online-classes-entry:last').append(title + school + dates);
+    };
+  }
 };
 
 var projects = {
@@ -104,7 +124,8 @@ $(document).click(function(loc) {
 
 
 
-// projects.display();
+projects.display();
+education.display();
 
 $('#main').append(googleMap);
 initializeMap();
