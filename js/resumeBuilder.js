@@ -10,7 +10,17 @@ var bio = {
   },
   welcomeMessage: 'hi there!',
   skills: ['javascript', 'microservices', 'design', 'ux'],
-  biopic: 'https://www.gravatar.com/avatar/49ce5cf6a72cf39f485bebda03979290?s=328&d=identicon&r=PG'
+  biopic: 'https://www.gravatar.com/avatar/49ce5cf6a72cf39f485bebda03979290?s=328&d=identicon&r=PG',
+  display: function() {
+    $('#main').prepend(HTMLheaderRole.replace('%data%', bio.role));
+    $('#main').prepend(HTMLheaderName.replace('%data%', bio.name));
+    if (bio.skills) {
+      $('#header').append(HTMLskillsStart);
+      for (idx in bio.skills) {
+        $('#skills').append(HTMLskills.replace('%data%', bio.skills[idx]));
+      }
+    };
+  }
 };
 
 var work = {
@@ -106,29 +116,20 @@ var inName = function() {
   return firstName + ' ' + lastName;
 };
 
-$('#main').prepend(HTMLheaderRole.replace('%data%', bio.role));
-$('#main').prepend(HTMLheaderName.replace('%data%', bio.name));
 
+var displayMap = function() {
+  $('#main').append(googleMap);
+  initializeMap();
+}
 
+// initialization - renders blocks one by one by calling corresponding functions
 
-if (bio.skills) {
-  $('#header').append(HTMLskillsStart);
-  $('#skills').append(HTMLskills.replace('%data%', skills));
-};
+var init = function() {
+  bio.display();
+  work.display();
+  projects.display();
+  education.display();
+  displayMap();
+}
 
-$(document).click(function(loc) {
-  console.log(loc.pageX, loc.pageY);
-
-});
-
-// $('#main').append(internationalizeButton);
-
-
-
-
-work.display();
-projects.display();
-education.display();
-
-$('#main').append(googleMap);
-initializeMap();
+init();
