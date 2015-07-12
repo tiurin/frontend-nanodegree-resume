@@ -17,12 +17,12 @@ var work = {
   jobs: [{
     employer: 'ReviewPro',
     title: 'senior software enginner',
-    dates: '2014-2015',
+    dates: 'October 2014 - now',
     location: 'Barcelona, Spain'
   }, {
     employer: 'Scytl',
     title: 'senior software enginner',
-    dates: '2014-2014',
+    dates: 'June 2014 - September 2014',
     location: 'Barcelona, Spain'
   }],
   display: function() {
@@ -78,20 +78,21 @@ var education = {
 
 var projects = {
   projects: [{
-    title: 'P1',
-    dates: '2013-2014',
-    description: 'eeey'
+    title: 'Portfolio',
+    dates: '2015',
+    description: 'My portfolio made during Udacity front-end nanodegree program'
   }, {
-    title: 'P2',
-    dates: '2014-2015',
-    description: 'doo bee doo boo doo'
+    title: 'Arcade game',
+    dates: '2015',
+    description: 'A game made during Udacity front-end nanodegree program'
   }],
   display: function() {
-    for (idx in projects) {
+    for (idx in projects.projects) {
       $('#projects').append(HTMLprojectStart);
-      var title = HTMLprojectTitle.replace('%data%', projects[idx].title);
-      var dates = HTMLprojectDates.replace('%data%', projects[idx].dates);
-      var description = HTMLprojectDescription.replace('%data%', projects[idx].description);
+      var projectEntry = projects.projects[idx];
+      var title = HTMLprojectTitle.replace('%data%', projectEntry.title);
+      var dates = HTMLprojectDates.replace('%data%', projectEntry.dates);
+      var description = HTMLprojectDescription.replace('%data%', projectEntry.description);
       $('.project-entry:last').append(title + dates + description);
 
     };
