@@ -34,6 +34,16 @@ var work = {
     title: 'senior software enginner',
     dates: 'June 2014 - September 2014',
     location: 'Barcelona, Spain'
+  }, {
+  	employer: 'Telenor DK',
+  	title: 'senior software enginner',
+  	dates: 'September 2011 - October 2013',
+  	location: 'Aalborg, Denmark'
+  }, {
+  	employer: 'Profitsoft',
+  	title: 'software enginner',
+  	dates: 'March 2009 - September 2011',
+  	location: 'Kharkiv, Ukraine'
   }],
   display: function() {
     for (idx in work.jobs) {
@@ -64,6 +74,11 @@ var education = {
     school: 'MongoDB',
     dates: 'May 2014',
     url: 'http://education.mongodb.com/downloads/certificates/8a8b88ac78db482d9d64e23619280ed1/Certificate.pdf'
+  }, {
+  	title: 'Algorithms: Design and Analysis, Part 1',
+  	school: 'Stanford University / Coursera',
+  	dates: 'September 2013',
+  	url: 'https://www.coursera.org/course/algo'
   }],
   display: function() {
     for (idx in education.schools) {
@@ -74,8 +89,8 @@ var education = {
       var degree = HTMLprojectDescription.replace('%data%', educationEntry.degree);
       $('.education-entry:last').append(name + degree + dates);
     };
+    $('#education').append(HTMLonlineClasses);
     for (idx in education.onlineCourses) {
-      $('#education').append(HTMLonlineClasses);
       $('#education').append(HTMLonlineStart);
       var course = education.onlineCourses[idx];
       var title = HTMLonlineTitle.replace('%data%', course.title);
@@ -95,6 +110,10 @@ var projects = {
     title: 'Arcade game',
     dates: '2015',
     description: 'A game made during Udacity front-end nanodegree program'
+  }, {
+  	title: 'Neighborhood map',
+  	dates: 2015,
+  	description: 'Places of interest of the neightborhood I live in'
   }],
   display: function() {
     for (idx in projects.projects) {
