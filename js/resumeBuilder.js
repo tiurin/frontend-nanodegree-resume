@@ -138,7 +138,6 @@ var inName = function() {
 
 var displayMap = function() {
   $('#main').append(googleMap);
-  initializeMap();
 }
 
 // initialization - renders blocks one by one by calling corresponding functions
