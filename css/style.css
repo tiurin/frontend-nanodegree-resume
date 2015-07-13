@@ -87,7 +87,7 @@ p {
   line-height: 21px;
 }
 a {
-  color: #1199c3;
+  color: #984141;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -126,7 +126,7 @@ a {
 /* TODO: Replace with image later */
 
 #header {
-  background-color: #484848;
+  background-color: #835050;
 }
 .flex-box {
   display: -webkit-flex;
