@@ -9,7 +9,7 @@ var bio = {
     location: 'Barcelona, Spain'
   },
   welcomeMessage: 'hi there!',
-  skills: ['javascript', 'microservices', 'design', 'ux'],
+  skills: ['Design', 'UX', 'Web applications', 'Javascript', 'HTML', 'CSS'],
   biopic: 'https://www.gravatar.com/avatar/49ce5cf6a72cf39f485bebda03979290?s=328&d=identicon&r=PG',
   display: function () {
     $('#header').prepend(HTMLheaderRole.replace('%data%', bio.role));
