@@ -131,17 +131,20 @@ var projects = {
       title: 'Portfolio',
       dates: '2015',
       description: 'My portfolio made during Udacity front-end nanodegree program',
-      url: 'https://github.com/tiurin/udfend-portfolio'
+      url: 'https://github.com/tiurin/udfend-portfolio',
+      images: ['images/portfolio_300.png']
     }, {
       title: 'Arcade game',
       dates: '2015',
       description: 'A game made during Udacity front-end nanodegree program',
-      url: 'https://github.com/tiurin/udfend-arcade'
+      url: 'https://github.com/tiurin/udfend-arcade',
+      images: ['images/platformer_300.png']
     }, {
       title: 'Neighborhood map',
       dates: 2015,
       description: 'Places of interest of the neightborhood I live in',
-      url: 'https://github.com/tiurin/vallvidrera-neighborhood-map'
+      url: 'https://github.com/tiurin/vallvidrera-neighborhood-map',
+      images: ['images/map_300.png']
     }
   ],
   display: function () {
@@ -151,7 +154,12 @@ var projects = {
       var title = HTMLprojectTitle.replace('%data%', projectEntry.title).replace('%url%', projectEntry.url);
       var dates = HTMLprojectDates.replace('%data%', projectEntry.dates);
       var description = HTMLprojectDescription.replace('%data%', projectEntry.description);
-      $('.project-entry:last').append(title + dates + description);
+      var image = '';
+      $.each(projectEntry.images, function (index, value) {
+        image += HTMLprojectImage.replace('%data%', value);
+      })
+
+      $('.project-entry:last').append(title + dates + description + image);
     };
   }
 };
