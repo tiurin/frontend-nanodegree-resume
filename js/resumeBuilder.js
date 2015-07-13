@@ -38,22 +38,26 @@ var work = {
       employer: 'ReviewPro',
       title: 'senior software enginner',
       dates: 'October 2014 - now',
-      location: 'Barcelona, Spain'
+      location: 'Barcelona, Spain',
+      description: 'Developing hotel online reputation management solutions'
     }, {
       employer: 'Scytl',
       title: 'senior software enginner',
       dates: 'June 2014 - September 2014',
-      location: 'Barcelona, Spain'
+      location: 'Barcelona, Spain',
+      description: 'Developing electronic voting solutions'
     }, {
       employer: 'Telenor DK',
       title: 'senior software enginner',
       dates: 'September 2011 - October 2013',
-      location: 'Aalborg, Denmark'
+      location: 'Aalborg, Denmark',
+      description: 'Developing middleware system for a large mobile operator'
     }, {
       employer: 'Profitsoft',
       title: 'software enginner',
       dates: 'March 2009 - September 2011',
-      location: 'Kharkiv, Ukraine'
+      location: 'Kharkiv, Ukraine',
+      description: 'Developing web-based solutions for insurance business automation'
     }
   ],
   display: function () {
@@ -64,7 +68,8 @@ var work = {
       var title = HTMLworkTitle.replace('%data%', workEntry.title);
       var dates = HTMLworkDates.replace('%data%', workEntry.dates);
       var locationString = HTMLworkLocation.replace('%data%', workEntry.location);
-      $('.work-entry:last').append(employer + title + dates + locationString);
+      var description = HTMLworkDescription.replace('%data%', workEntry.description);
+      $('.work-entry:last').append(employer + title + dates + locationString + description);
     }
   }
 };
