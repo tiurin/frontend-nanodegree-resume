@@ -39,32 +39,36 @@ var work = {
       title: 'senior software enginner',
       dates: 'October 2014 - now',
       location: 'Barcelona, Spain',
-      description: 'Developing hotel online reputation management solutions'
+      description: 'Developing hotel online reputation management and guest intelligence solutions',
+      url: 'http://www.reviewpro.com'
     }, {
       employer: 'Scytl',
       title: 'senior software enginner',
       dates: 'June 2014 - September 2014',
       location: 'Barcelona, Spain',
-      description: 'Developing electronic voting solutions'
+      description: 'Developing electronic voting solutions',
+      url: 'http://www.scytl.com'
     }, {
       employer: 'Telenor DK',
       title: 'senior software enginner',
       dates: 'September 2011 - October 2013',
       location: 'Aalborg, Denmark',
-      description: 'Developing middleware system for a large mobile operator'
+      description: 'Developing middleware system for a large mobile operator',
+      url: 'http://www.telenor.dk'
     }, {
       employer: 'Profitsoft',
       title: 'software enginner',
       dates: 'March 2009 - September 2011',
       location: 'Kharkiv, Ukraine',
-      description: 'Developing web-based solutions for insurance business automation'
+      description: 'Developing web-based solutions for insurance business automation',
+      url: 'http://www.profitsoft.ua/en/'
     }
   ],
   display: function () {
     for (idx in work.jobs) {
       $('#workExperience').append(HTMLworkStart);
       var workEntry = work.jobs[idx];
-      var employer = HTMLworkEmployer.replace('%data%', workEntry.employer);
+      var employer = HTMLworkEmployer.replace('%data%', workEntry.employer).replace('%url%', workEntry.url);
       var title = HTMLworkTitle.replace('%data%', workEntry.title);
       var dates = HTMLworkDates.replace('%data%', workEntry.dates);
       var locationString = HTMLworkLocation.replace('%data%', workEntry.location);
@@ -102,7 +106,7 @@ var education = {
     for (idx in education.schools) {
       var educationEntry = education.schools[idx];
       $('#education').append(HTMLschoolStart);
-      var name = HTMLschoolName.replace('%data%', educationEntry.name);
+      var name = HTMLschoolName.replace('%data%', educationEntry.name).replace('%url%', educationEntry.url);
       var degree = HTMLschoolDegree.replace('%data%', educationEntry.degree);
       var dates = HTMLschoolDates.replace('%data%', educationEntry.dates);
       var location = HTMLschoolLocation.replace('%data%', educationEntry.location);
@@ -113,7 +117,7 @@ var education = {
     for (idx in education.onlineCourses) {
       $('#education').append(HTMLonlineStart);
       var course = education.onlineCourses[idx];
-      var title = HTMLonlineTitle.replace('%data%', course.title);
+      var title = HTMLonlineTitle.replace('%data%', course.title).replace('%url%', course.url);
       var school = HTMLonlineSchool.replace('%data%', course.school)
       var dates = HTMLonlineDates.replace('%data%', course.dates);
       $('.online-classes-entry:last').append(title + school + dates);
@@ -126,22 +130,25 @@ var projects = {
     {
       title: 'Portfolio',
       dates: '2015',
-      description: 'My portfolio made during Udacity front-end nanodegree program'
+      description: 'My portfolio made during Udacity front-end nanodegree program',
+      url: 'https://github.com/tiurin/udfend-portfolio'
     }, {
       title: 'Arcade game',
       dates: '2015',
-      description: 'A game made during Udacity front-end nanodegree program'
+      description: 'A game made during Udacity front-end nanodegree program',
+      url: 'https://github.com/tiurin/udfend-arcade'
     }, {
       title: 'Neighborhood map',
       dates: 2015,
-      description: 'Places of interest of the neightborhood I live in'
+      description: 'Places of interest of the neightborhood I live in',
+      url: 'https://github.com/tiurin/vallvidrera-neighborhood-map'
     }
   ],
   display: function () {
     for (idx in projects.projects) {
       $('#projects').append(HTMLprojectStart);
       var projectEntry = projects.projects[idx];
-      var title = HTMLprojectTitle.replace('%data%', projectEntry.title);
+      var title = HTMLprojectTitle.replace('%data%', projectEntry.title).replace('%url%', projectEntry.url);
       var dates = HTMLprojectDates.replace('%data%', projectEntry.dates);
       var description = HTMLprojectDescription.replace('%data%', projectEntry.description);
       $('.project-entry:last').append(title + dates + description);
