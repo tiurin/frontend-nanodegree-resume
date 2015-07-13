@@ -14,6 +14,13 @@ var bio = {
   display: function () {
     $('#main').prepend(HTMLheaderRole.replace('%data%', bio.role));
     $('#main').prepend(HTMLheaderName.replace('%data%', bio.name));
+
+    $.each(bio.contacts, function (key, value) {
+      var contactList = HTMLcontactGeneric.replace('%contact%', key).replace('%data%', value);
+      $('#topContacts').append(contactList);
+      $('#footerContacts').append(contactList);
+    });
+
     if (bio.skills) {
       $('#header').append(HTMLskillsStart);
       for (idx in bio.skills) {

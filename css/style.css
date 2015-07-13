@@ -106,11 +106,13 @@ a {
   background-color: #f5ae23;
 }
 .orange-text {
+  font-size: 12px;
   color: #f5ae23;
 }
 .white-text {
   font-weight: bold;
   color: #fff;
+  font-size: 12px;
 }
 .gray {
   background-color: #f3f3f3;
