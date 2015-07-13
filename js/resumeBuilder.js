@@ -11,7 +11,7 @@ var bio = {
   welcomeMessage: 'hi there!',
   skills: ['javascript', 'microservices', 'design', 'ux'],
   biopic: 'https://www.gravatar.com/avatar/49ce5cf6a72cf39f485bebda03979290?s=328&d=identicon&r=PG',
-  display: function() {
+  display: function () {
     $('#main').prepend(HTMLheaderRole.replace('%data%', bio.role));
     $('#main').prepend(HTMLheaderName.replace('%data%', bio.name));
     if (bio.skills) {
@@ -24,28 +24,30 @@ var bio = {
 };
 
 var work = {
-  jobs: [{
-    employer: 'ReviewPro',
-    title: 'senior software enginner',
-    dates: 'October 2014 - now',
-    location: 'Barcelona, Spain'
-  }, {
-    employer: 'Scytl',
-    title: 'senior software enginner',
-    dates: 'June 2014 - September 2014',
-    location: 'Barcelona, Spain'
-  }, {
-  	employer: 'Telenor DK',
-  	title: 'senior software enginner',
-  	dates: 'September 2011 - October 2013',
-  	location: 'Aalborg, Denmark'
-  }, {
-  	employer: 'Profitsoft',
-  	title: 'software enginner',
-  	dates: 'March 2009 - September 2011',
-  	location: 'Kharkiv, Ukraine'
-  }],
-  display: function() {
+  jobs: [
+    {
+      employer: 'ReviewPro',
+      title: 'senior software enginner',
+      dates: 'October 2014 - now',
+      location: 'Barcelona, Spain'
+    }, {
+      employer: 'Scytl',
+      title: 'senior software enginner',
+      dates: 'June 2014 - September 2014',
+      location: 'Barcelona, Spain'
+    }, {
+      employer: 'Telenor DK',
+      title: 'senior software enginner',
+      dates: 'September 2011 - October 2013',
+      location: 'Aalborg, Denmark'
+    }, {
+      employer: 'Profitsoft',
+      title: 'software enginner',
+      dates: 'March 2009 - September 2011',
+      location: 'Kharkiv, Ukraine'
+    }
+  ],
+  display: function () {
     for (idx in work.jobs) {
       $('#workExperience').append(HTMLworkStart);
       var workEntry = work.jobs[idx];
@@ -54,33 +56,35 @@ var work = {
       var dates = HTMLworkDates.replace('%data%', workEntry.dates);
       var locationString = HTMLworkLocation.replace('%data%', workEntry.location);
       $('.work-entry:last').append(employer + title + dates + locationString);
-
     }
   }
-
 };
 
 var education = {
-  schools: [{
-    name: 'Kharkiv Polytechnical Institute',
-    degree: 'Master degree',
-    major: 'Metrology and Measuring Technology',
-    location: 'Kharkiv, Ukraine',
-    dates: '2002-2008',
-    url: 'http://www.kpi.kharkov.ua/en/'
-  }],
-  onlineCourses: [{
-    title: 'M101J: MongoDB for Java Developers',
-    school: 'MongoDB',
-    dates: 'May 2014',
-    url: 'http://education.mongodb.com/downloads/certificates/8a8b88ac78db482d9d64e23619280ed1/Certificate.pdf'
-  }, {
-  	title: 'Algorithms: Design and Analysis, Part 1',
-  	school: 'Stanford University / Coursera',
-  	dates: 'September 2013',
-  	url: 'https://www.coursera.org/course/algo'
-  }],
-  display: function() {
+  schools: [
+    {
+      name: 'Kharkiv Polytechnical Institute',
+      degree: 'Master degree',
+      major: 'Metrology and Measuring Technology',
+      location: 'Kharkiv, Ukraine',
+      dates: '2002-2008',
+      url: 'http://www.kpi.kharkov.ua/en/'
+    }
+  ],
+  onlineCourses: [
+    {
+      title: 'M101J: MongoDB for Java Developers',
+      school: 'MongoDB',
+      dates: 'May 2014',
+      url: 'http://education.mongodb.com/downloads/certificates/8a8b88ac78db482d9d64e23619280ed1/Certificate.pdf'
+    }, {
+      title: 'Algorithms: Design and Analysis, Part 1',
+      school: 'Stanford University / Coursera',
+      dates: 'September 2013',
+      url: 'https://www.coursera.org/course/algo'
+    }
+  ],
+  display: function () {
     for (idx in education.schools) {
       var educationEntry = education.schools[idx];
       $('#education').append(HTMLschoolStart);
@@ -102,20 +106,22 @@ var education = {
 };
 
 var projects = {
-  projects: [{
-    title: 'Portfolio',
-    dates: '2015',
-    description: 'My portfolio made during Udacity front-end nanodegree program'
-  }, {
-    title: 'Arcade game',
-    dates: '2015',
-    description: 'A game made during Udacity front-end nanodegree program'
-  }, {
-  	title: 'Neighborhood map',
-  	dates: 2015,
-  	description: 'Places of interest of the neightborhood I live in'
-  }],
-  display: function() {
+  projects: [
+    {
+      title: 'Portfolio',
+      dates: '2015',
+      description: 'My portfolio made during Udacity front-end nanodegree program'
+    }, {
+      title: 'Arcade game',
+      dates: '2015',
+      description: 'A game made during Udacity front-end nanodegree program'
+    }, {
+      title: 'Neighborhood map',
+      dates: 2015,
+      description: 'Places of interest of the neightborhood I live in'
+    }
+  ],
+  display: function () {
     for (idx in projects.projects) {
       $('#projects').append(HTMLprojectStart);
       var projectEntry = projects.projects[idx];
@@ -123,12 +129,11 @@ var projects = {
       var dates = HTMLprojectDates.replace('%data%', projectEntry.dates);
       var description = HTMLprojectDescription.replace('%data%', projectEntry.description);
       $('.project-entry:last').append(title + dates + description);
-
     };
   }
 };
 
-var inName = function() {
+var inName = function () {
   var parts = bio.name.split(' ');
   var firstName = parts[0].slice(0, 1).toUpperCase() + parts[0].slice(1);
   var lastName = parts[1].toUpperCase();
@@ -136,13 +141,13 @@ var inName = function() {
 };
 
 
-var displayMap = function() {
+var displayMap = function () {
   $('#main').append(googleMap);
 }
 
 // initialization - renders blocks one by one by calling corresponding functions
 
-var init = function() {
+var init = function () {
   bio.display();
   work.display();
   projects.display();
