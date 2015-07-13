@@ -12,8 +12,8 @@ var bio = {
   skills: ['javascript', 'microservices', 'design', 'ux'],
   biopic: 'https://www.gravatar.com/avatar/49ce5cf6a72cf39f485bebda03979290?s=328&d=identicon&r=PG',
   display: function () {
-    $('#main').prepend(HTMLheaderRole.replace('%data%', bio.role));
-    $('#main').prepend(HTMLheaderName.replace('%data%', bio.name));
+    $('#header').prepend(HTMLheaderRole.replace('%data%', bio.role));
+    $('#header').prepend(HTMLheaderName.replace('%data%', bio.name));
 
     $.each(bio.contacts, function (key, value) {
       var contactList = HTMLcontactGeneric.replace('%contact%', key).replace('%data%', value);
@@ -21,12 +21,14 @@ var bio = {
       $('#footerContacts').append(contactList);
     });
 
-    if (bio.skills) {
-      $('#header').append(HTMLskillsStart);
-      for (idx in bio.skills) {
-        $('#skills').append(HTMLskills.replace('%data%', bio.skills[idx]));
-      }
-    };
+    $('#header').append(HTMLbioPic.replace('%data%', bio.biopic));
+    $('#header').append(HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage));
+
+
+    $('#header').append(HTMLskillsStart);
+    for (idx in bio.skills) {
+      $('#skills').append(HTMLskills.replace('%data%', bio.skills[idx]));
+    }
   }
 };
 
