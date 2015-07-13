@@ -145,6 +145,30 @@ var displayMap = function () {
   $('#main').append(googleMap);
 }
 
+var initializeBlocks = function () {
+  if (document.getElementsByClassName('flex-item').length === 0) {
+    document.getElementById('topContacts').style.display = 'none';
+  }
+  if (document.getElementsByTagName('h1').length === 0) {
+    document.getElementById('hea  der').style.display = 'none';
+  }
+  if (document.getElementsByClassName('work-entry').length === 0) {
+    document.getElementById('workExperience').style.display = 'none';
+  }
+  if (document.getElementsByClassName('project-entry').length === 0) {
+    document.getElementById('projects').style.display = 'none';
+  }
+  if (document.getElementsByClassName('education-entry').length === 0) {
+    document.getElementById('education').style.display = 'none';
+  }
+  if (document.getElementsByClassName('flex-item').length === 0) {
+    document.getElementById('lets-connect').style.display = 'none';
+  }
+  if (document.getElementById('map') === null) {
+    document.getElementById('map-div').style.display = 'none';
+  }
+}
+
 // initialization - renders blocks one by one by calling corresponding functions
 
 var init = function () {
@@ -153,6 +177,11 @@ var init = function () {
   projects.display();
   education.display();
   displayMap();
+  // hide blocks without info
+  initializeBlocks();
+  //show map
+  initializeMap();
 }
 
-init();
+// when all resources are ready initialize all blocks
+window.addEventListener('load', init);
