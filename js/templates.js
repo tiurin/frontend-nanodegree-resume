@@ -16,31 +16,31 @@ var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry row"></div>';
-var HTMLworkEmployer = '<div class="col-12"><a class="company-url" href="#">%data%</a>';
+var HTMLworkEmployer = '<div class="col-12"><a class="url" href="#">%data%</a>';
 var HTMLworkTitle = ' - %data%</div>';
 var HTMLworkDates = '<div class="col-9"><span class="date-text">%data%</span></div>';
 var HTMLworkLocation = '<div class="col-3"><span class="location-text">%data%</span></div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
+var HTMLworkDescription = '<div class="col-12"><span class="desc-text">%data%</span></div>';
 
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectStart = '<div class="project-entry row"></div>';
+var HTMLprojectTitle = '<div class="col-12"><a class="url" href="#">%data%</a></div>';
+var HTMLprojectDates = '<div class="date-text col-12">%data%</div>';
+var HTMLprojectDescription = '<div class="col-12"><span class="desc-text">%data%</span></div>';
 var HTMLprojectImage = '<img src="%data%">';
 
-var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
-var HTMLschoolDates = '<div class="date-text">%data%</div>';
-var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em>';
+var HTMLschoolStart = '<div class="education-entry row"></div>';
+var HTMLschoolName = '<div class="col-12"><a class="url" href="#">%data%</a>';
+var HTMLschoolDegree = ' - %data%</div>';
+var HTMLschoolDates = '<div class="col-9"><span class="date-text">%data%</span></div>';
+var HTMLschoolLocation = '<div class="col-3"><span class="location-text">%data%</span></div>';
+var HTMLschoolMajor = '<div class="col-12"><span class="major-text">Major: %data%</span></div>';
 
-var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineStart = '<div class="online-classes-entry"></div>';
-var HTMLonlineTitle = '<a href="#">%data%';
-var HTMLonlineSchool = ' - %data%</a>';
-var HTMLonlineDates = '<div class="date-text">%data%</div>';
+var HTMLonlineClasses = '<div class="row"><h3>Online Classes</h3></div>';
+var HTMLonlineStart = '<div class="online-classes-entry row"></div>';
+var HTMLonlineTitle = '<div class="col-12"><a class="url" href="#">%data%</a>';
+var HTMLonlineSchool = ' - %data%</div>';
+var HTMLonlineDates = '<div class="col-9"><span class="date-text">%data%</span></div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
 var internationalizeButton = '<button>Internationalize</button>';
-var googleMap = '<div id="map"></div>';
+var googleMap = '<div id="map" class="col-12"></div>';

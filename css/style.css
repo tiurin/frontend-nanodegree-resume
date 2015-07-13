@@ -47,7 +47,7 @@ h4,
 h5 {
   padding: 10px 5%;
 }
-.company-url {
+.url {
   display: inline;
   margin-left: 20px;
 }
@@ -55,6 +55,20 @@ h5 {
   font-style: italic;
   font-size: 14px;
   color: #999;
+  line-height: 16px;
+  float: left;
+  margin-left: 20px;
+}
+.desc-text {
+  font-size: 14px;
+  color: #111;
+  line-height: 16px;
+  float: left;
+  margin-left: 20px;
+}
+.major-text {
+  font-size: 14px;
+  color: #666;
   line-height: 16px;
   float: left;
   margin-left: 20px;

@@ -89,9 +89,11 @@ var education = {
       var educationEntry = education.schools[idx];
       $('#education').append(HTMLschoolStart);
       var name = HTMLschoolName.replace('%data%', educationEntry.name);
+      var degree = HTMLschoolDegree.replace('%data%', educationEntry.degree);
       var dates = HTMLschoolDates.replace('%data%', educationEntry.dates);
-      var degree = HTMLprojectDescription.replace('%data%', educationEntry.degree);
-      $('.education-entry:last').append(name + degree + dates);
+      var location = HTMLschoolLocation.replace('%data%', educationEntry.location);
+      var major = HTMLschoolMajor.replace('%data%', educationEntry.major);
+      $('.education-entry:last').append(name + degree + dates + location + major);
     };
     $('#education').append(HTMLonlineClasses);
     for (idx in education.onlineCourses) {
