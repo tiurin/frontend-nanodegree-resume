@@ -215,4 +215,4 @@ var init = function () {
 }
 
 // when all resources are ready initialize all blocks
-window.addEventListener('load', init);
+$(init);
