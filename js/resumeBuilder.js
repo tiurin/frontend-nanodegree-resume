@@ -259,9 +259,10 @@ var view = {
     };
     this.map = new google.maps.Map(document.querySelector('#map-div'), mapOptions);
     window.mapBounds = new google.maps.LatLngBounds();
+    var that = this;
     window.addEventListener('resize', function (e) {
       //Make sure the map bounds get updated on page resize
-      this.map.fitBounds(mapBounds);
+      that.map.fitBounds(mapBounds);
     });
   },
   /*
@@ -325,9 +326,10 @@ var view = {
 
       // Actually searches the Google Maps API for location data and runs the callback
       // function with the search results after each search.
+      var that = this;
       service.textSearch(request, function (results, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
-          view.createMapMarker(results[0]);
+          that.createMapMarker(results[0]);
         }
       });
     }
@@ -337,8 +339,8 @@ var view = {
     this.renderWork();
     this.renderEducation();
     this.renderProjects();
-    this.initializeBlocks();
     this.initMap();
+    this.initializeBlocks();
     this.pinPoster();
   }
 
